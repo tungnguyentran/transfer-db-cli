@@ -1,0 +1,43 @@
+# MySQL Transfer Configuration
+# ============================
+
+source:
+  host: "sgs-brick-staging4-db.cijt1frbeje3.us-east-1.rds.amazonaws.com"
+  port: 3306
+  user: "kff_app"
+  password: "19df4997dd64a31b5ef3afe90e1d9fceb0fab15c"
+  database: "whiplash_default"
+  charset: "utf8mb4"
+  ssh:
+    enabled: true
+    host: "3.80.131.168"
+    port: 22
+    user: "ubuntu"
+    # password: "ssh_password"
+    key_file: "/Users/tungnt1/WWE-Keys/Whiplash_Deploy_SGS_2024.pem"
+
+destination:
+  host: "127.0.0.1"
+  port: 3306
+  user: "kff_app"
+  password: "12345678"
+  database: "whiplash_default"
+  charset: "utf8mb4"
+
+options:
+  tables: []
+  exclude_tables: [
+    'db_archive_*',
+    'wp_audit_logentrysql',
+    'wp_audit_logentry'
+  ]
+  chunk_size: 10000
+  workers: 4
+  drop_existing: false
+  truncate: false
+  incremental: false
+  incremental_column: ""
+  include_views: false
+  include_routines: false
+  include_triggers: false
+  dry_run: false
