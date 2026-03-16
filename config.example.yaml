@@ -2,26 +2,26 @@
 # ============================
 
 source:
-  host: "sgs-brick-staging4-db.cijt1frbeje3.us-east-1.rds.amazonaws.com"
+  host: "mysql.example.com"
   port: 3306
-  user: "kff_app"
-  password: "19df4997dd64a31b5ef3afe90e1d9fceb0fab15c"
-  database: "whiplash_default"
+  user: "[USERNAME]"
+  password: "[PASSWORD]"
+  database: "database_name"
   charset: "utf8mb4"
   ssh:
     enabled: true
-    host: "54.81.233.142"
+    host: "[IP_ADDRESS]"
     port: 22
-    user: "ubuntu"
+    user: "[USERNAME]"
     # password: "ssh_password"
-    key_file: "/Users/tungnt1/WWE-Keys/Whiplash_Deploy_SGS_2024.pem"
+    key_file: "/path/to/key_file"
 
 destination:
-  host: "127.0.0.1"
+  host: "[IP_ADDRESS]"
   port: 3306
-  user: "kff_app"
-  password: "12345678"
-  database: "whiplash_default"
+  user: "[USERNAME]"
+  password: "[PASSWORD]"
+  database: "database_name"
   charset: "utf8mb4"
 
 options:
